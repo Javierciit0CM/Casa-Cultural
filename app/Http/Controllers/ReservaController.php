@@ -61,18 +61,26 @@ class ReservaController extends Controller
     {
         // Buscar la reserva por su ID
         $reserva = Reserva::find($id);
-    
+
         // Verificar si la reserva existe
         if (!$reserva) {
             return redirect()->route('reservas.index')->with('error', 'La reserva no existe o ya ha sido eliminada.');
         }
-    
+
+        // Cambiar el estado de la habitación asociada a "Disponible"
+        $habitacion = $reserva->habitacion;
+        if ($habitacion) {
+            $habitacion->estado = 'Disponible';
+            $habitacion->save();
+        }
+
         // Eliminar la reserva
         $reserva->delete();
-    
+
         // Redirigir con un mensaje de éxito
-        return redirect()->route('reservas.index')->with('success', 'Reserva eliminada exitosamente.');
+        return redirect()->route('reservas.index')->with('success', 'Reserva eliminada exitosamente y habitación marcada como disponible.');
     }
+
 
     public function update(Request $request, $id)
     {

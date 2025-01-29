@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cliente_id'); // Relación con clientes
             $table->date('fecha_entrada'); // Fecha de entrada
             $table->date('fecha_salida'); // Fecha de salida
-            $table->enum('estado', ['Pendiente', 'Confirmada', 'Cancelada'])->default('Pendiente'); // Estado de la reserva
+            $table->enum('estado', ['Pendiente', 'Confirmada', 'Cancelada', 'Finalizada'])->default('Pendiente'); // Estado de la reserva
             $table->timestamps(); // Created_at y updated_at
 
             // Claves foráneas

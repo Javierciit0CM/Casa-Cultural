@@ -41,34 +41,22 @@
                 <div class="hotel-dropdown">
                     <button class="hotel-dropdown__toggle">
                         <i class="fas fa-bell"></i>
-                        <span class="hotel-notification__count">3</span>
+                        <span class="hotel-notification__count">{{ auth()->user()->unreadNotifications->count() }}</span>
                     </button>
                     <div class="hotel-dropdown__menu">
                         <div class="hotel-dropdown__header">Notificaciones</div>
-                        <a href="#" class="hotel-dropdown__item">
-                            <div class="hotel-dropdown__item-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="hotel-dropdown__item-content">
-                                <div class="hotel-dropdown__item-title">Nueva reserva</div>
-                                <div class="hotel-dropdown__item-description">Se ha realizado una nueva reserva para la habitación 101.</div>
-                            </div>
-                        </a>
-                        <a href="#" class="hotel-dropdown__item">
-                            <div class="hotel-dropdown__item-icon"><i class="fas fa-exclamation-circle"></i></div>
-                            <div class="hotel-dropdown__item-content">
-                                <div class="hotel-dropdown__item-title">Mantenimiento programado</div>
-                                <div class="hotel-dropdown__item-description">Mantenimiento de la piscina programado para mañana.</div>
-                            </div>
-                        </a>
-                        <a href="#" class="hotel-dropdown__item">
-                            <div class="hotel-dropdown__item-icon"><i class="fas fa-star"></i></div>
-                            <div class="hotel-dropdown__item-content">
-                                <div class="hotel-dropdown__item-title">Nueva reseña</div>
-                                <div class="hotel-dropdown__item-description">Un cliente ha dejado una reseña de 5 estrellas.</div>
-                            </div>
-                        </a>
+                        @foreach(auth()->user()->unreadNotifications as $notification)
+                            <a href="#" class="hotel-dropdown__item">
+                                <div class="hotel-dropdown__item-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="hotel-dropdown__item-content">
+                                    <div class="hotel-dropdown__item-title">Nueva reserva</div>
+                                    <div class="hotel-dropdown__item-description">{{ $notification->data['message'] }}</div>
+                                </div>
+                            </a>
+                        @endforeach
                         <a href="#" class="hotel-dropdown__footer">Ver todas las notificaciones</a>
                     </div>
-                </div>
+                </div>                
 
                 <!-- Profile Menu -->
                 <div class="hotel-dropdown">

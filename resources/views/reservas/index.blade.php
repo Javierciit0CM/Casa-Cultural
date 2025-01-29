@@ -166,22 +166,23 @@
     {{-- FIN --}}
 
     {{-- MODAL PARA ACTUALIZAR EL ESTADO DE LA RESERVA --}}
-    <div id="editModal" class="modal hidden modal-custom">
-        <div class="modal-content modal-custom-content">
-            <div class="modal-header modal-custom-header">
-                <h5 class="modal-title">Editar Estado de Reserva</h5>
-                <button class="close-modal btn-close-modal" onclick="closeEditModal()">&times;</button>
-            </div>
-            <div class="modal-body modal-custom-body">
+<div id="editModal" class="modal hidden modal-custom">
+    <div class="modal-content modal-custom-content">
+        <div class="modal-header modal-custom-header">
+            <h5 class="modal-title">Editar Estado de Reserva</h5>
+            <button class="close-modal btn-close-modal" onclick="closeEditModal()">&times;</button>
+        </div>
+        <div class="modal-body modal-custom-body">
+            @isset($reserva)
                 <form action="{{ route('reservas.update', $reserva->id) }}" id="editForm" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group modal-form-group">
                         <label for="reservationStatus" class="modal-label">Estado de la Reserva</label>
                         <select id="reservationStatus" name="estado" class="modal-select">
-                            <option value="Pendiente">Pendiente</option>
-                            <option value="Confirmada">Confirmado</option>
-                            <option value="Cancelada">Cancelado</option>
+                            <option value="Pendiente" {{ $reserva->estado == 'Pendiente' ? 'selected' : '' }}>Pendiente</option>
+                            <option value="Confirmada" {{ $reserva->estado == 'Confirmada' ? 'selected' : '' }}>Confirmada</option>
+                            <option value="Cancelada" {{ $reserva->estado == 'Cancelada' ? 'selected' : '' }}>Cancelada</option>
                         </select>
                     </div>
                     <div class="modal-footer">
@@ -189,10 +190,14 @@
                         <button type="button" class="btn btn-cancel" onclick="closeEditModal()">Cancelar</button>
                     </div>
                 </form>
-            </div>
+            @else
+                <p>No se ha encontrado la reserva.</p>
+            @endisset
         </div>
     </div>
-    {{-- FIN --}}
+</div>
+{{-- FIN --}}
+
 
 </div>
 @endsection

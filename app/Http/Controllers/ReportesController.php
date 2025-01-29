@@ -13,9 +13,8 @@ class ReportesController extends Controller
     
 
     public function index() {
-
         $clientes = Cliente::all();
-
+    
         // Obtener todas las habitaciones
         $habitaciones = Habitacione::all();
         $totalHabitaciones = $habitaciones->count();
@@ -27,16 +26,19 @@ class ReportesController extends Controller
         // Calcular porcentaje de ocupación
         $porcentajeOcupadas = $totalHabitaciones > 0 ? ($ocupadas / $totalHabitaciones) * 100 : 0;
     
-        // Calcular ingresos diarios
+        // Calcular ingresos diarios solo para reservas confirmadas
         $hoy = Carbon::today();
-        $reservasHoy = Reserva::whereDate('created_at', $hoy)->get();
+        $reservasHoy = Reserva::whereDate('created_at', $hoy)
+                              ->where('estado', 'Confirmada') // Filtrar solo las reservas confirmadas
+                              ->get();
         $ingresosHoy = $reservasHoy->sum('costo');
-
+    
         $reservas = Reserva::all();
     
         // Pasar datos a la vista
         return view('reportes.index', compact('ocupadas', 'disponibles', 'porcentajeOcupadas', 'ingresosHoy', 'clientes', 'reservas'));
     }
+    
     
     
 }
