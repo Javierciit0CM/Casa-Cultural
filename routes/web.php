@@ -9,6 +9,12 @@ use App\Http\Controllers\RestauranteController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\ReportesController;
 
+
+
+route::get('/', function () {
+    return view('inicio.inicio');
+}) -> name('inicio');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
