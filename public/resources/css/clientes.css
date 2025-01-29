@@ -303,6 +303,7 @@
   
   @media screen and (max-width: 768px) {
     .cm-container {
+      margin-top: -1000px;
       padding: 1rem;
     }
     .cm-actions {

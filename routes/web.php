@@ -15,10 +15,10 @@ Route::middleware([
     'verified',
 ])->group(function () {
     // Ruta para reportes (dashboard principal)
-    Route::resource('/reportes', ReportesController::class)->names('reportes');
+    Route::resource('/dashboard', ReportesController::class)->names('reportes');
 
     // Rutas protegidas para las demás funcionalidades
-    Route::resource('dashboard', ReservaController::class)->names('reservas');
+    Route::resource('reservas', ReservaController::class)->names('reservas');
     Route::resource('habitaciones', HabitacionController::class)->names('habitaciones');
     Route::resource('clientes', ClienteController::class)->names('clientes');
     Route::resource('restaurante', RestauranteController::class)->names('restaurante');

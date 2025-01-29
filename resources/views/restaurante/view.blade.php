@@ -62,7 +62,7 @@
     </div>
 
     <div class="luxe-button-container luxe-fade-in">
-        <a href="{{ route('habitaciones.index') }}" class="luxe-btn luxe-btn-back">
+        <a href="{{ route('restaurante.index') }}" class="luxe-btn luxe-btn-back">
             <i data-feather="chevron-left"></i>
             Volver al Listado
         </a>

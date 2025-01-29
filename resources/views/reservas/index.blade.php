@@ -173,7 +173,7 @@
                 <button class="close-modal btn-close-modal" onclick="closeEditModal()">&times;</button>
             </div>
             <div class="modal-body modal-custom-body">
-                <form id="editForm" method="POST">
+                <form action="{{ route('reservas.update', $reserva->id) }}" id="editForm" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group modal-form-group">
