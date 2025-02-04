@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const header = document.querySelector(".lhe-header");
     const menuToggle = document.querySelector(".lhe-menu-toggle");
     const nav = document.querySelector(".lhe-nav");
     const languageButton = document.querySelector(".lhe-language-button");
@@ -16,34 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevButton = document.querySelector(".lh-modal-carousel-control.lh-prev");
     const nextButton = document.querySelector(".lh-modal-carousel-control.lh-next");
 
-    // Cambio de estilo del header al hacer scroll
-    window.addEventListener("scroll", () => {
-        header.classList.toggle("scrolled", window.scrollY > 50);
-    });
-
-    // Menú móvil - abrir y cerrar
-    menuToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        nav.classList.toggle("active");
-        menuToggle.setAttribute("aria-expanded", nav.classList.contains("active"));
-    });
-
     document.addEventListener("click", (e) => {
         if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
             nav.classList.remove("active");
             menuToggle.setAttribute("aria-expanded", "false");
         }
     });
-
-    // Selector de idioma
-    languageButton.addEventListener("click", (e) => {
-        e.stopPropagation();
-        languageDropdown.classList.toggle("active");
-    });
-    document.addEventListener("click", () => {
-        languageDropdown.classList.remove("active");
-    });
-
     // Animación de aparición para tarjetas de habitaciones
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {

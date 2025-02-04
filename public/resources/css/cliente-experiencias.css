@@ -1,14 +1,4 @@
 
-
-body {
-  font-family: "Arial", sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  margin: 0;
-  padding: 0;
-}
-
 .lh-container {
   max-width: 1200px;
   margin: 0 auto;

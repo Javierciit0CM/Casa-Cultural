@@ -1,22 +1,4 @@
-:root {
-    --primary-color: #d4af37;
-    --secondary-color: #1c2841;
-    --text-color: #333;
-    --background-color: #f9f9f9;
-    --card-background: #ffffff;
-    --overlay-color: rgba(28, 40, 65, 0.8);
-    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-  
-  body {
-    font-family: "Montserrat", sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-  }
-  
+
   .lh-testimonials {
     position: relative;
     padding: 100px 0;
