@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap");
+
+.lh-hero-wrapper {
+  position: relative;
+  height: 100vh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.lh-hero-carousel {
+    margin-top: 50px;
+  position: relative;
+  height: calc(100% - 4rem);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.lh-carousel-container {
+  position: relative;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.lh-carousel {
+  height: 100%;
+}
+
+.lh-carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  transform: scale(1.05);
+}
+
+.lh-carousel-slide.lh-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lh-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.lh-slide-content {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.lh-active .lh-slide-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lh-slide-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.lh-slide-content p {
+  font-size: 1.2rem;
+}
+
+.lh-carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(201, 168, 106, 0.3);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.lh-carousel-control:hover {
+  background: rgba(201, 168, 106, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lh-prev {
+  left: 2rem;
+}
+
+.lh-next {
+  right: 2rem;
+}
+
+.lh-carousel-indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.lh-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.lh-indicator.lh-active {
+  background: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.lh-hero-content {
+  position: absolute;
+  top: 85%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  z-index: 20;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(201, 168, 106, 0.3);
+}
+
+.lh-hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lh-hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.lh-show-form-button {
+  background: var(--gold-gradient);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lh-show-form-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(201, 168, 106, 0.3);
+}
+
+.lh-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lh-form-overlay.lh-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lh-form-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.lh-close-form-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+.lh-form-container h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.lh-search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lh-form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lh-form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.lh-form-group input,
+.lh-form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(201, 168, 106, 0.3);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lh-form-group input:focus,
+.lh-form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(201, 168, 106, 0.2);
+}
+
+.lh-search-button {
+  background: var(--gold-gradient);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-self: center;
+}
+
+.lh-search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(201, 168, 106, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .lh-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .lh-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .lh-hero-wrapper {
+    padding: 1rem;
+  }
+
+  .lh-hero-carousel {
+    height: calc(100% - 2rem);
+  }
+
+  .lh-prev {
+    left: 1rem;
+  }
+
+  .lh-next {
+    right: 1rem;
+  }
+
+  .lh-slide-content h2 {
+    font-size: 2rem;
+  }
+
+  .lh-slide-content p {
+    font-size: 1rem;
+  }
+
+  .lh-form-container {
+    padding: 1.5rem;
+  }
+}
+
