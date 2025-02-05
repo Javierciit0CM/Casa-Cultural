@@ -1,0 +1,217 @@
+:root {
+    --primary-color: #1c1c1c;
+    --secondary-color: #d4af37;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --card-background: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+  .lhs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .lhs-search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    margin-bottom: 3rem;
+    transition: var(--transition);
+  }
+  
+  .lhs-search-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-color);
+  }
+  
+  .lhs-input-group {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .lhs-input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .lhs-input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  .lhs-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  }
+  
+  .lhs-search-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    align-self: flex-end;
+  }
+  
+  .lhs-search-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+  
+  .lhs-room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .lhs-room-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: var(--transition);
+  }
+  
+  .lhs-room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-color);
+  }
+  
+  .lhs-carousel {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .lhs-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .lhs-carousel img.active {
+    opacity: 1;
+  }
+  
+  .lhs-room-info {
+    padding: 1.5rem;
+  }
+  
+  .lhs-room-info h2 {
+    font-family: "Playfair Display", serif;
+    margin: 0 0 1rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .lhs-features-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+  
+  .lhs-features-list li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .lhs-features-list li i {
+    margin-right: 0.5rem;
+    color: var(--secondary-color);
+  }
+  
+  .lhs-room-price {
+    display: flex;
+    align-items: baseline;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .lhs-room-price strong {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0 0.25rem;
+  }
+  
+  .lhs-book-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+  }
+  
+  .lhs-book-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+  
+  @media (max-width: 768px) {
+    .lhs-search-form {
+      flex-direction: column;
+    }
+  
+    .lhs-input-group,
+    .lhs-search-btn {
+      width: 100%;
+    }
+  
+    .lhs-header h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .lhs-container {
+      padding: 1rem;
+    }
+  
+    .lhs-room-card {
+      border-radius: 0;
+    }
+  
+    .lhs-carousel {
+      height: 200px;
+    }
+  }
+  

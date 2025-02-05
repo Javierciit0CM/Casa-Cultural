@@ -24,6 +24,5 @@ class Kernel extends ConsoleKernel
     {
         // Programa el comando para que se ejecute todos los días a las 13:00
         $schedule->command('reservations:check-expired')->dailyAt('13:00');
-        $schedule->command('reservations:check-notifications')->everyMinute();
     }
 }

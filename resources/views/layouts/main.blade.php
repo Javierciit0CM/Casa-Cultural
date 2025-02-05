@@ -14,20 +14,17 @@
     <link rel="stylesheet" href="{{asset('resources/css/cliente-experiencias.css')}}">
     <link rel="stylesheet" href="{{asset('resources/css/cliente-blog.css')}}">
     <link rel="stylesheet" href="{{asset('resources/css/cliente-testimonios.css')}}">
+    <link rel="stylesheet" href="{{asset('resources/css/cliente-reserva.css')}}">
     <link rel="stylesheet" href="{{asset('resources/css/whatsapp.css')}}">
+    
     
 </head>
 <body>
     
     @include('layouts.partials.header')
 
-    @include('layouts.partials.carrusel')
+    @yield('contenido')
 
-    @include('layouts.partials.habitaciones-section')
-
-    @include('layouts.partials.experiencias-section')
-    @include('layouts.partials.blog-section')
-    @include('layouts.partials.testimonios-section')
     @include('layouts.partials.whatsapp')
     @include('layouts.partials.footer')
 
@@ -38,6 +35,7 @@
     <script src="{{ asset('resources/js/cliente-experiencias.js') }}"></script>
     <script src="{{ asset('resources/js/cliente-blog.js') }}"></script>
     <script src="{{ asset('resources/js/cliente-testimonios.js') }}"></script>
+    <script src="{{ asset('resources/js/cliente-reserva.js') }}"></script>
     <script src="{{ asset('resources/js/whatsapp.js') }}"></script>
 </body>
 </html>

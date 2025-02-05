@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\Reserva;
-use App\Models\Habitacione;
+use App\Models\Habitacione; // Asegurar que el modelo esté bien nombrado
 use Carbon\Carbon;
 
 class CheckReservationsExpiration extends Command
@@ -21,42 +21,31 @@ class CheckReservationsExpiration extends Command
      *
      * @var string
      */
-    protected $description = 'Check reservations and update their status and the room status at 13:00 daily';
+    protected $description = 'Check reservations and update their status and the room status daily at 13:00';
 
     /**
      * Execute the console command.
-     *
-     * @return void
      */
     public function handle()
     {
-        // Obtén la fecha y hora actual
         $now = Carbon::now();
 
-        // Asegúrate de que la hora sea exactamente las 13:00
-        if ($now->hour == 13 && $now->minute == 0) {
-            // Obtén las reservas cuya fecha de salida ya haya pasado
-            $reservasExpiradas = Reserva::where('fecha_salida', '<', $now->toDateString())
-                ->where('estado', 'Confirmada') // Solo aquellas con estado confirmado
-                ->get();
+        // Obtener reservas expiradas
+        $reservasExpiradas = Reserva::where('fecha_salida', '<=', $now)
+            ->where('estado', 'Confirmada') // Solo reservas confirmadas
+            ->get();
 
-            foreach ($reservasExpiradas as $reserva) {
-                // Cambiar el estado de la reserva a "Finalizada"
-                $reserva->estado = 'Finalizada';
-                $reserva->save();
+        foreach ($reservasExpiradas as $reserva) {
+            // Marcar reserva como finalizada
+            $reserva->update(['estado' => 'Finalizada']);
 
-                // Actualizar la habitación asociada a la reserva
-                $habitacion = Habitacione::find($reserva->habitacion_id);
-                if ($habitacion) {
-                    $habitacion->estado = 'Disponible'; // Cambiar el estado de la habitación
-                    $habitacion->save();
-                }
-
-                // Mostrar mensaje en consola
-                $this->info('Reserva ' . $reserva->id . ' actualizada a "Finalizada" y habitación cambiada a "Disponible".');
+            // Liberar la habitación
+            $habitacion = Habitacion::find($reserva->habitacion_id);
+            if ($habitacion) {
+                $habitacion->update(['estado' => 'Disponible']);
             }
-        } else {
-            $this->info('No es hora de actualizar las reservas. La actualización solo ocurre a las 13:00.');
+
+            $this->info("Reserva ID {$reserva->id} finalizada y habitación marcada como disponible.");
         }
     }
 }

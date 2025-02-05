@@ -2,58 +2,41 @@
     <div class="lh-container">
         <h2 class="lh-section-title">Nuestras Habitaciones</h2>
         <div class="lh-rooms-grid">
-            <div class="lh-room-card" data-room-type="simple">
-                <div class="lh-room-image">
-                    <img src="{{asset('resources/img/room-s.avif')}}" alt="Habitación Simple">
-                    <div class="lh-room-overlay">
-                        <span class="lh-room-price">Desde $150/noche</span>
+            @foreach($habitaciones as $habitacion)
+                <div class="lh-room-card" data-room-type="{{ $habitacion->tipo_habitacion }}">
+                    <div class="lh-room-image" onclick="openModal({{ $habitacion->id }})">
+                        <img src="{{ asset('storage/' . $habitacion->imagenes->first()->img ?? 'resources/img/default-room.jpg') }}" alt="{{ $habitacion->tipo_habitacion }}">
+                        <div class="lh-room-overlay">
+                            <span class="lh-room-price">Desde ${{ $habitacion->precio }}/noche</span>
+                        </div>
+                    </div>
+                    <div class="lh-room-content">
+                        <h3>{{ ucfirst($habitacion->tipo_habitacion) }}</h3>
+                        
+                        @php
+                            $iconos = [
+                                'baño' => 'fa-bath',
+                                'tv' => 'fa-tv',
+                                'cama doble' => 'fa-bed',
+                                'vista a la calle'  => 'fa-city',
+                                'wifi' => 'fa-wifi',
+                                'aire acondicionado' => 'fa-wind'
+                            ];
+                        @endphp
+
+                        <ul class="lh-room-features">
+                            @foreach(explode(',', $habitacion->descripcion) as $caracteristica)
+                                @php $caracteristica = trim(strtolower($caracteristica)); @endphp
+                                <li>
+                                    <i class="fas {{ $iconos[$caracteristica] ?? 'fa-check-circle' }}"></i>
+                                    {{ ucfirst($caracteristica) }}
+                                </li>
+                            @endforeach
+                        </ul>
+                        <button class="lh-room-button" onclick="openModal({{ $habitacion->id }})">Ver Detalles</button>
                     </div>
                 </div>
-                <div class="lh-room-content">
-                    <h3>Habitación Simple</h3>
-                    <p>Perfecta para el viajero solitario que busca comodidad y estilo.</p>
-                    <button class="lh-room-button">Ver Detalles</button>
-                </div>
-            </div>
-            <div class="lh-room-card" data-room-type="double">
-                <div class="lh-room-image">
-                    <img src="{{asset('resources/img/room-g.jpg')}}" alt="Habitación Doble">
-                    <div class="lh-room-overlay">
-                        <span class="lh-room-price">Desde $250/noche</span>
-                    </div>
-                </div>
-                <div class="lh-room-content">
-                    <h3>Habitación Doble</h3>
-                    <p>Espacio amplio y confortable para parejas o amigos que viajan juntos.</p>
-                    <button class="lh-room-button">Ver Detalles</button>
-                </div>
-            </div>
-            <div class="lh-room-card" data-room-type="matrimonial">
-                <div class="lh-room-image">
-                    <img src="{{asset('resources/img/room-m.avif')}}" alt="Suite Matrimonial">
-                    <div class="lh-room-overlay">
-                        <span class="lh-room-price">Desde $350/noche</span>
-                    </div>
-                </div>
-                <div class="lh-room-content">
-                    <h3>Suite Matrimonial</h3>
-                    <p>Lujo y romanticismo en una suite diseñada para momentos especiales.</p>
-                    <button class="lh-room-button">Ver Detalles</button>
-                </div>
-            </div>
-            <div class="lh-room-card" data-room-type="group">
-                <div class="lh-room-image">
-                    <img src="{{asset('resources/img/room-d.jpg')}}" alt="Habitación Grupal">
-                    <div class="lh-room-overlay">
-                        <span class="lh-room-price">Desde $450/noche</span>
-                    </div>
-                </div>
-                <div class="lh-room-content">
-                    <h3>Habitación Grupal</h3>
-                    <p>Ideal para familias o grupos de amigos que buscan compartir experiencias.</p>
-                    <button class="lh-room-button">Ver Detalles</button>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="lh-more-rooms">
             <a href="#" class="lh-more-rooms-link">Más Habitaciones</a>

@@ -137,18 +137,22 @@
   }
   
   .lh-room-button {
-    width: 100%;
-    padding: 1rem;
+    width: 50%;
+    margin-top: 20px;
+    padding: 5px;
     font-size: 1.1rem;
     background: var(--gold-gradient);
     color: var(--secondary-color);
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .lh-room-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: white;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(201, 168, 106, 0.4);
   }

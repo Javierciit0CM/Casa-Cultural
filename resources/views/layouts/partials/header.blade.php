@@ -6,8 +6,8 @@
         </div>
         <nav class="lhe-nav">
             <ul class="lhe-nav-list">
-                <li><a href="#inicio" class="lhe-nav-link"><i class="fas fa-home"></i><span>Inicio</span></a></li>
-                <li><a href="#habitaciones" class="lhe-nav-link"><i class="fas fa-bed"></i><span>Habitaciones</span></a></li>
+                <li><a href="/" class="lhe-nav-link"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+                <li><a href="{{route('reservar')}}" class="lhe-nav-link"><i class="fas fa-bed"></i><span>Habitaciones</span></a></li>
                 <li><a href="#servicios" class="lhe-nav-link"><i class="fas fa-concierge-bell"></i><span>Servicios</span></a></li>
                 <li><a href="#blog" class="lhe-nav-link"><i class="fas fa-blog"></i><span>Blog</span></a></li>
                 <li><a href="#nosotros" class="lhe-nav-link"><i class="fas fa-users"></i><span>Nosotros</span></a></li>

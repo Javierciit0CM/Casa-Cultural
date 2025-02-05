@@ -8,13 +8,16 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\RestauranteController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\ReportesController;
+use App\Http\Controllers\BuscarHabitacionesController;
 
 use App\Http\Controllers\HomeController;
 
 
 
 
-route::get('/', [HomeController::class, 'index'])->name('inicio');
+route::get('/', [HomeController::class, 'index'])->name('/');
+route::get('/reservar', [BuscarHabitacionesController::class, 'index'])->name('reservar');
+route::get('/buscar-habitaciones', [BuscarHabitacionesController::class, 'buscar'])->name('buscar-habitaciones');
 
 
 
