@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('habitaciones', function (Blueprint $table) {
             $table->id();
-            $table->enum('tipo_habitacion', ['simples', 'doble', 'matrimonial', 'grupal']);
+            $table->enum('tipo_habitacion', ['Simples', 'Dobles', 'Matrimoniales', 'Grupales']);
             $table->decimal('precio', 10, 2);
             $table->integer('capacidad_maxima');
             $table->text('descripcion');

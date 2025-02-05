@@ -40,9 +40,9 @@
                 <select name="tipo_habitacion" id="rmTipoHabitacion" required>
                     <option value="" disabled selected>Seleccione tipo...</option>
                     <option value="Simples">Simple</option>
-                    <option value="Doble">Doble</option>
-                    <option value="Matrimonial">Matrimonial</option>
-                    <option value="Grupal">Grupal</option>
+                    <option value="Dobles">Doble</option>
+                    <option value="Matrimoniales">Matrimonial</option>
+                    <option value="Grupales">Grupal</option>
                 </select>
             </div>
             <div class="rm-form-group">

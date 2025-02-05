@@ -18,6 +18,8 @@ use App\Http\Controllers\HomeController;
 route::get('/', [HomeController::class, 'index'])->name('/');
 route::get('/reservar', [BuscarHabitacionesController::class, 'index'])->name('reservar');
 route::get('/buscar-habitaciones', [BuscarHabitacionesController::class, 'buscar'])->name('buscar-habitaciones');
+Route::get('/habitaciones/filtrar', [BuscarHabitacionesController::class, 'filtrarPorPrecio'])->name('habitaciones.filtrar');
+
 
 
 
