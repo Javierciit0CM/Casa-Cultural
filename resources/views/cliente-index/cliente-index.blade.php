@@ -4,6 +4,8 @@
 
 @section('contenido')
 
+@include('layouts.partials.buscar-habitaciones')
+
 @include('layouts.partials.carrusel')
 
 @include('layouts.partials.habitaciones-section')

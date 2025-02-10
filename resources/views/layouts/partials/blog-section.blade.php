@@ -1,67 +1,53 @@
-<section class="lh-blog-news">
-    <div class="lh-parallax-bg"></div>
-    <div class="lh-container">
-        <div class="lh-section-header">
-            <h2 class="lh-section-title">Experiencias Exclusivas</h2>
-            <p class="lh-section-subtitle">Descubre un mundo de lujo y sofisticación</p>
-        </div>
-        
-        <div class="lh-blog-grid">
-            <article class="lh-blog-card lh-featured">
-                <div class="lh-blog-image">
-                    <img src="{{asset('resources/img/blog-1.jpg')}}" alt="Experiencia de Spa de Lujo">
-                    <div class="lh-overlay"></div>
-                    <span class="lh-category">Destacado</span>
-                </div>
-                <div class="lh-blog-content">
-                    <h3>Renacimiento en el Spa: Una Experiencia Transformadora</h3>
-                    <p>Sumérgete en un oasis de serenidad donde cada tratamiento es una obra maestra de relajación y rejuvenecimiento.</p>
-                    <a href="#" class="lh-read-more">Descubrir el Oasis <i class="fas fa-water"></i></a>
-                </div>
-            </article>
-            
-            <article class="lh-blog-card">
-                <div class="lh-blog-image">
-                    <img src="{{asset('resources/img/blog-2.webp')}}" alt="Experiencia Gastronómica">
-                    <div class="lh-overlay"></div>
-                    <span class="lh-category">Gastronomía</span>
-                </div>
-                <div class="lh-blog-content">
-                    <h3>Sinfonía de Sabores: La Nueva Era Culinaria</h3>
-                    <p>Embárcate en un viaje gastronómico donde cada plato es una obra de arte, creada por nuestros chefs de renombre mundial.</p>
-                    <a href="#" class="lh-read-more">Explorar Menú <i class="fas fa-utensils"></i></a>
-                </div>
-            </article>
-            
-            <article class="lh-blog-card">
-                <div class="lh-blog-image">
-                    <img src="{{asset('resources/img/blog-3.avif')}}" alt="Suites de Ensueño">
-                    <div class="lh-overlay"></div>
-                    <span class="lh-category">Alojamiento</span>
-                </div>
-                <div class="lh-blog-content">
-                    <h3>Suites de Ensueño: Tu Santuario Personal</h3>
-                    <p>Descubre espacios donde el lujo se encuentra con la comodidad, ofreciendo vistas impresionantes y servicios incomparables.</p>
-                    <a href="#" class="lh-read-more">Explorar Suites <i class="fas fa-bed"></i></a>
-                </div>
-            </article>
-            
-            <article class="lh-blog-card">
-                <div class="lh-blog-image">
-                    <img src="{{asset('resources/img/blog-4.png')}}" alt="Eventos Exclusivos">
-                    <div class="lh-overlay"></div>
-                    <span class="lh-category">Eventos</span>
-                </div>
-                <div class="lh-blog-content">
-                    <h3>Momentos Inolvidables: Eventos de Élite</h3>
-                    <p>Desde bodas de ensueño hasta conferencias de alto nivel, creamos experiencias que perduran en la memoria.</p>
-                    <a href="#" class="lh-read-more">Planificar Evento <i class="fas fa-glass-cheers"></i></a>
-                </div>
-            </article>
-        </div>
-        
-        <div class="lh-blog-cta">
-            <a href="#" class="lh-btn-primary">Descubre Todas Nuestras Experiencias</a>
-        </div>
+<section class="blog-section">
+    <div class="blog-section__container">
+      <h2 class="blog-section__title">Nuestro Blog</h2>
+      <div class="blog-section__grid">
+        <article class="blog-section__post">
+          <div class="blog-section__post-image">
+            <img src="{{asset('resources/img/blog-1.jpg')}}" alt="Tendencias de Diseño Web">
+            <span class="blog-section__post-category">Diseño Web</span>
+          </div>
+          <div class="blog-section__post-content">
+            <h3 class="blog-section__post-title">5 Tendencias de Diseño Web para 2025</h3>
+            <p class="blog-section__post-excerpt">Descubre las últimas tendencias en diseño web que dominarán el próximo año. Desde diseños minimalistas hasta experiencias inmersivas, te mostramos cómo mantenerte a la vanguardia.</p>
+            <div class="blog-section__post-meta">
+              <span class="blog-section__post-date">10 de Mayo, 2025</span>
+              <a href="#" class="blog-section__post-link">Leer más</a>
+            </div>
+          </div>
+        </article>
+        <article class="blog-section__post">
+          <div class="blog-section__post-image">
+            <img src="{{asset('resources/img/blog-2.webp')}}" alt="Optimización de Sitios Web">
+            <span class="blog-section__post-category">Rendimiento</span>
+          </div>
+          <div class="blog-section__post-content">
+            <h3 class="blog-section__post-title">Cómo Mejorar la Velocidad de tu Sitio Web</h3>
+            <p class="blog-section__post-excerpt">Aprende técnicas efectivas para optimizar el rendimiento de tu sitio web. Desde la compresión de imágenes hasta la implementación de caché, descubre cómo hacer que tu sitio sea más rápido que nunca.</p>
+            <div class="blog-section__post-meta">
+              <span class="blog-section__post-date">15 de Mayo, 2025</span>
+              <a href="#" class="blog-section__post-link">Leer más</a>
+            </div>
+          </div>
+        </article>
+        <article class="blog-section__post">
+          <div class="blog-section__post-image">
+            <img src="{{asset('resources/img/blog-3.avif')}}" alt="SEO en 2025">
+            <span class="blog-section__post-category">SEO</span>
+          </div>
+          <div class="blog-section__post-content">
+            <h3 class="blog-section__post-title">La Importancia del SEO en 2025</h3>
+            <p class="blog-section__post-excerpt">Descubre por qué el SEO sigue siendo crucial para el éxito de tu negocio en línea. Aprende las últimas estrategias para mejorar tu visibilidad en los motores de búsqueda y atraer más tráfico orgánico.</p>
+            <div class="blog-section__post-meta">
+              <span class="blog-section__post-date">20 de Mayo, 2025</span>
+              <a href="#" class="blog-section__post-link">Leer más</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="blog-section__cta">
+        <a href="#" class="blog-section__cta-button">Ver todas las entradas</a>
+      </div>
     </div>
-</section>
+  </section>
+  

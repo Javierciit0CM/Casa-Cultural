@@ -1,70 +1,81 @@
-<section class="lh-testimonials">
-    <div class="lh-parallax-bg"></div>
-    <div class="lh-container">
-        <h2 class="lh-section-title">Experiencias de Nuestros Huéspedes</h2>
-        <div class="lh-testimonial-carousel">
-            <div class="lh-testimonial-track">
-                <div class="lh-testimonial-slide">
-                    <div class="lh-testimonial-content">
-                        <div class="lh-testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="lh-testimonial-text">"Una experiencia inolvidable. El servicio fue impecable y las instalaciones, de otro mundo. Definitivamente volveremos."</p>
-                        <div class="lh-testimonial-author">
-                            <img src="https://i.pravatar.cc/150?img=1" alt="María González" class="lh-author-image">
-                            <div class="lh-author-info">
-                                <h4>María González</h4>
-                                <p>Madrid, España</p>
-                            </div>
-                        </div>
-                    </div>
+<section class="testimonials-carousel">
+    <div class="testimonials-carousel__container">
+      <h2 class="testimonials-carousel__title">Lo que dicen nuestros huéspedes</h2>
+      <div class="testimonials-carousel__wrapper">
+        <button class="testimonials-carousel__button testimonials-carousel__button--prev" aria-label="Testimonio anterior">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="testimonials-carousel__icon"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="testimonials-carousel__track">
+          <div class="testimonials-carousel__slide">
+            <div class="testimonials-carousel__card">
+              <div class="testimonials-carousel__rating">
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+              </div>
+              <p class="testimonials-carousel__comment">"Una experiencia inolvidable. Las habitaciones son hermosas y el personal es increíblemente atento. ¡Definitivamente volveremos!"</p>
+              <div class="testimonials-carousel__author">
+                <img src="https://via.placeholder.com/60x60" alt="María García" class="testimonials-carousel__author-image">
+                <div class="testimonials-carousel__author-info">
+                  <h4 class="testimonials-carousel__author-name">María García</h4>
+                  <p class="testimonials-carousel__author-date">Mayo 2025</p>
                 </div>
-                <div class="lh-testimonial-slide">
-                    <div class="lh-testimonial-content">
-                        <div class="lh-testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="lh-testimonial-text">"La atención al detalle es asombrosa. Cada momento de nuestra estancia fue perfecto. El spa es un verdadero paraíso."</p>
-                        <div class="lh-testimonial-author">
-                            <img src="https://i.pravatar.cc/150?img=2" alt="John Smith" class="lh-author-image">
-                            <div class="lh-author-info">
-                                <h4>John Smith</h4>
-                                <p>Nueva York, EE.UU.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lh-testimonial-slide">
-                    <div class="lh-testimonial-content">
-                        <div class="lh-testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="lh-testimonial-text">"La gastronomía es excepcional. Cada comida fue una experiencia culinaria única. El personal es extremadamente atento y profesional."</p>
-                        <div class="lh-testimonial-author">
-                            <img src="https://i.pravatar.cc/150?img=3" alt="Sophie Dubois" class="lh-author-image">
-                            <div class="lh-author-info">
-                                <h4>Sophie Dubois</h4>
-                                <p>París, Francia</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <button class="lh-carousel-btn lh-prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="lh-carousel-btn lh-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="testimonials-carousel__slide">
+            <div class="testimonials-carousel__card">
+              <div class="testimonials-carousel__rating">
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star testimonials-carousel__star--inactive">★</span>
+              </div>
+              <p class="testimonials-carousel__comment">"Excelente ubicación y vistas impresionantes. El desayuno buffet es delicioso y variado. Recomiendo encarecidamente este lugar."</p>
+              <div class="testimonials-carousel__author">
+                <img src="https://via.placeholder.com/60x60" alt="Carlos Rodríguez" class="testimonials-carousel__author-image">
+                <div class="testimonials-carousel__author-info">
+                  <h4 class="testimonials-carousel__author-name">Carlos Rodríguez</h4>
+                  <p class="testimonials-carousel__author-date">Abril 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials-carousel__slide">
+            <div class="testimonials-carousel__card">
+              <div class="testimonials-carousel__rating">
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+                <span class="testimonials-carousel__star">★</span>
+              </div>
+              <p class="testimonials-carousel__comment">"Limpieza impecable y comodidad absoluta. El spa es un oasis de relajación. Sin duda, la mejor elección para unas vacaciones perfectas."</p>
+              <div class="testimonials-carousel__author">
+                <img src="https://via.placeholder.com/60x60" alt="Ana Martínez" class="testimonials-carousel__author-image">
+                <div class="testimonials-carousel__author-info">
+                  <h4 class="testimonials-carousel__author-name">Ana Martínez</h4>
+                  <p class="testimonials-carousel__author-date">Junio 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="lh-testimonial-dots"></div>
+        <button class="testimonials-carousel__button testimonials-carousel__button--next" aria-label="Testimonio siguiente">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="testimonials-carousel__icon"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+      <div class="testimonials-carousel__controls">
+        <div class="testimonials-carousel__dots"></div>
+        <button class="testimonials-carousel__play-pause" aria-label="Pausar carrusel">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="testimonials-carousel__icon testimonials-carousel__icon--pause"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="testimonials-carousel__icon testimonials-carousel__icon--play"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        </button>
+      </div>
     </div>
-</section>
+  </section>
+  
+  

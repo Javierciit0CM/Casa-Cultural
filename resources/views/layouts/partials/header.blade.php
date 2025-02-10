@@ -1,34 +1,25 @@
-<header class="lhe-header">
-    <div class="lhe-container">
-        <div class="lhe-logo">
-            <i class="fas fa-hotel"></i>
-            <span class="lhe-logo-text">Casa Cultural</span>
-        </div>
-        <nav class="lhe-nav">
-            <ul class="lhe-nav-list">
-                <li><a href="/" class="lhe-nav-link"><i class="fas fa-home"></i><span>Inicio</span></a></li>
-                <li><a href="{{route('reservar')}}" class="lhe-nav-link"><i class="fas fa-bed"></i><span>Habitaciones</span></a></li>
-                <li><a href="#servicios" class="lhe-nav-link"><i class="fas fa-concierge-bell"></i><span>Servicios</span></a></li>
-                <li><a href="#blog" class="lhe-nav-link"><i class="fas fa-blog"></i><span>Blog</span></a></li>
-                <li><a href="#nosotros" class="lhe-nav-link"><i class="fas fa-users"></i><span>Nosotros</span></a></li>
+<header class="eh-header">
+    <div class="eh-header__container">
+        <a href="/" class="eh-header__logo-link">
+            <img src="/placeholder.svg?height=50&width=150" alt="Elegant Hotel Logo" class="eh-header__logo-img">
+        </a>
+        <nav class="eh-nav" aria-label="Main navigation">
+            <button class="eh-nav__toggle" aria-expanded="false" aria-controls="main-menu">
+                <span class="eh-nav__toggle-icon"></span>
+                <span class="eh-nav__toggle-text">Menu</span>
+            </button>
+            <ul id="main-menu" class="eh-nav__list">
+                <li class="eh-nav__item"><a href="#" class="eh-nav__link">Inicio</a></li>
+                <li class="eh-nav__item"><a href="#" class="eh-nav__link">Habitaciones</a></li>
+                <li class="eh-nav__item"><a href="#" class="eh-nav__link">Blog</a></li>
+                <li class="eh-nav__item"><a href="#" class="eh-nav__link">Contáctanos</a></li>
+                <li class="eh-nav__item eh-nav__item--mobile">
+                    <button class="eh-nav__close"><i class="fas fa-times"></i></button>
+                </li>
             </ul>
         </nav>
-        <div class="lhe-actions">
-            <div class="lhe-language-switcher">
-                <button class="lhe-language-button">
-                    <i class="fas fa-globe"></i>
-                    <span>ES</span>
-                </button>
-                <ul class="lhe-language-dropdown">
-                    <li><button data-lang="es">Español</button></li>
-                    <li><button data-lang="en">English</button></li>
-                    <li><button data-lang="fr">Français</button></li>
-                </ul>
-            </div>
-            <button class="lhe-book-now">Reservar Ahora</button>
+        <div class="eh-header__cta">
+            <a href="#" class="eh-btn eh-btn--primary">Registrarse</a>
         </div>
-        <button class="lhe-menu-toggle" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
-        </button>
     </div>
 </header>

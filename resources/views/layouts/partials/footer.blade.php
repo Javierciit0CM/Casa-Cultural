@@ -1,61 +1,67 @@
-<footer class="lhe-footer">
-    <div class="lhe-footer-container">
-        <div class="lhe-footer-section lhe-footer-about">
-            <h3 class="lhe-footer-title">Casa Cultrual</h3>
-            <p>Experiencias inolvidables en el corazón del lujo. Descubre el confort y la elegancia en cada detalle.</p>
-            <div class="lhe-social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-        <div class="lhe-footer-section lhe-footer-links">
-            <h3 class="lhe-footer-title">Enlaces Rápidos</h3>
-            <ul class="lhe-quick-links">
-                <li>
-                    <a href="#" class="lhe-quick-link" data-image="resources/enlaces/dircetur.png">Dirsetur</a>
-                </li>
-                <li>
-                    <a href="#" class="lhe-quick-link" data-image="resources/enlaces/ministerio-cultura.png">Ministerio De Cultura</a>
-                </li>
-                <li>
-                    <a href="#" class="lhe-quick-link" data-image="resources/enlaces/peru-informa.jpg">Peru Informa</a>
-                </li>
-                <li>
-                    <a href="#" class="lhe-quick-link" data-image="resources/enlaces/marca.webp">Marca Peru</a>
-                </li>
-                <li>
-                    <a href="#" class="lhe-quick-link" data-image="resources/enlaces/tu-que-planes.png">Tu Que Planes</a>
-                </li>
-                <li>
-                    <a href="#" class="lhe-quick-link" data-image="resources/enlaces/police.jpg">Policia De Turismo</a>
-                </li>
-            </ul>
-            <div class="lhe-hover-image-container">
-                <img src="/placeholder.svg" alt="" class="lhe-hover-image">
-            </div>
-        </div>
-        <div class="lhe-footer-section lhe-footer-contact">
-            <h3 class="lhe-footer-title">Contáctanos</h3>
-            <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Ciudad, País</p>
-            <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-            <p><i class="fas fa-envelope"></i> info@luxuryhotel.com</p>
-        </div>
-        <div class="lhe-footer-section lhe-footer-newsletter">
-            <h3 class="lhe-footer-title">Boletín Informativo</h3>
-            <p>Suscríbete para recibir ofertas exclusivas y novedades.</p>
-            <form class="lhe-newsletter-form">
-                <input type="email" placeholder="Tu correo electrónico" required>
-                <button type="submit" aria-label="Suscribirse"><i class="fas fa-paper-plane"></i></button>
-            </form>
-        </div>
+<footer class="site-footer">
+    <div class="footer-wave">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
     </div>
-    <div class="lhe-footer-bottom">
-        <p>&copy; 2025 Luxury Hotel. Todos los derechos reservados.</p>
-        <div class="lhe-footer-legal">
-            <a href="#">Política de Privacidad</a>
-            <a href="#">Términos y Condiciones</a>
-        </div>
+    <div class="footer-container">
+      <div class="footer-section footer-about" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="footer-title">Sobre Nosotros</h3>
+        <p>Descubre la excelencia en hospitalidad en nuestro acogedor hospedaje, donde cada detalle está diseñado para hacer de tu estancia una experiencia inolvidable.</p>
+        <a href="#about" class="btn-learn-more">Conoce más</a>
+      </div>
+      <div class="footer-section footer-contact" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="footer-title">Contacto</h3>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>123 Calle Principal, Ciudad, País, CP 12345</span>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <span>+1 (234) 567-8900</span>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@tuhospedaje.com">info@tuhospedaje.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section footer-links" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="footer-title">Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#habitaciones">Habitaciones</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#reservas">Reservas</a></li>
+          <li><a href="#galeria">Galería</a></li>
+        </ul>
+      </div>
+      <div class="footer-section footer-newsletter" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="footer-title">Boletín Informativo</h3>
+        <p>Suscríbete para recibir nuestras mejores ofertas y novedades.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Tu correo electrónico" required>
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
     </div>
-</footer>
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <div class="footer-social" data-aos="fade-up">
+          <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+        </div>
+        <p>&copy; 2025 Tu Hospedaje. Todos los derechos reservados.</p>
+        <ul class="footer-legal">
+          <li><a href="#privacidad">Política de Privacidad</a></li>
+          <li><a href="#terminos">Términos y Condiciones</a></li>
+          <li><a href="#cookies">Política de Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+  

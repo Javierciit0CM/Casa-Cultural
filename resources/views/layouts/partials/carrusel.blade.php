@@ -1,61 +1,35 @@
-<div class="lh-hero-wrapper">
-    <div class="lh-hero-carousel">
-        <div class="lh-carousel-container">
-            <div class="lh-carousel">
-                <div class="lh-carousel-slide lh-active">
-                    <img src="{{asset('resources/img/hero1.jpg')}}" alt="Hotel de Lujo 1">
-                    <div class="lh-slide-content">
-                        <h2>Lujo Inigualable</h2>
-                        <p>Descubre el confort en cada detalle</p>
-                    </div>
-                </div>
-                <div class="lh-carousel-slide">
-                    <img src="{{asset('resources\img/hero2.avif')}}" alt="Hotel de Lujo 2">
-                    <div class="lh-slide-content">
-                        <h2>Relájate y Renuévate</h2>
-                        <p>Spa de clase mundial a tu disposición</p>
-                    </div>
-                </div>
-                <div class="lh-carousel-slide">
-                    <img src="{{asset('resources\img/hero3.jpg')}}" alt="Hotel de Lujo 3">
-                    <div class="lh-slide-content">
-                        <h2>Experiencia Culinaria</h2>
-                        <p>Sabores exquisitos en cada plato</p>
-                    </div>
-                </div>
+<div class="carousel-container">
+    <div class="carousel-wrapper">
+        <div class="carousel-slide active">
+            <img src="{{asset('resources/img/hero1.jpg')}}" alt="Image 1" class="carousel-image">
+            <div class="carousel-caption">
+                <h2 style="color: white">Bienvenido a Nuestra Página</h2>
+                <p style="color: white">Descubre nuestros servicios de alta calidad</p>
             </div>
-            <button class="lh-carousel-control lh-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-            <button class="lh-carousel-control lh-next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-            <div class="lh-carousel-indicators"></div>
         </div>
-        <div class="lh-hero-content">
-            <button id="lh-show-form" class="lh-show-form-button">Reserva Ahora</button>
+        <div class="carousel-slide">
+            <img src="{{asset('resources/img/hero2.avif')}}" alt="Image 2" class="carousel-image">
+            <div class="carousel-caption">
+                <h2 style="color: white">Innovación y Tecnología</h2>
+                <p style="color: white">Soluciones modernas para tus necesidades</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="{{asset('resources/img/hero3.jpg')}}" alt="Image 3" class="carousel-image">
+            <div class="carousel-caption">
+                <h2 style="color: white">Experiencia Inigualable</h2>
+                <p style="color: white">Más de 10 años liderando el mercado</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="{{asset('resources/img/blog-1.jpg')}}" alt="Image 4" class="carousel-image">
+            <div class="carousel-caption">
+                <h2 style="color: white">Nuestro Blog</h2>
+                <p style="color: white">Mantente informado con nuestras últimas noticias</p>
+            </div>
         </div>
     </div>
-</div>
-<div id="lh-form-overlay" class="lh-form-overlay">
-    <div class="lh-form-container">
-        <button id="lh-close-form" class="lh-close-form-button">&times;</button>
-        <h2>Reserva tu Estancia</h2>
-        <form class="lh-search-form">
-            <div class="lh-form-group">
-                <label for="check-in">Check-in</label>
-                <input type="date" id="check-in" required>
-            </div>
-            <div class="lh-form-group">
-                <label for="check-out">Check-out</label>
-                <input type="date" id="check-out" required>
-            </div>
-            <div class="lh-form-group">
-                <label for="guests">Huéspedes</label>
-                <select id="guests" required>
-                    <option value="1">1 Adulto</option>
-                    <option value="2">2 Adultos</option>
-                    <option value="3">3 Adultos</option>
-                    <option value="4">4 Adultos</option>
-                </select>
-            </div>
-            <button type="submit" class="lh-search-button">Buscar Disponibilidad</button>
-        </form>
-    </div>
+    <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-dots"></div>
 </div>

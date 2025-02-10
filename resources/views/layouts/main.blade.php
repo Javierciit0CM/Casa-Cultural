@@ -15,11 +15,23 @@
     <link rel="stylesheet" href="{{asset('resources/css/cliente-blog.css')}}">
     <link rel="stylesheet" href="{{asset('resources/css/cliente-testimonios.css')}}">
     <link rel="stylesheet" href="{{asset('resources/css/cliente-reserva.css')}}">
+    <link rel="stylesheet" href="{{asset('resources/css/cliente-cargando.css')}}">
+    <link rel="stylesheet" href="{{asset('resources/css/cliente-buscar.css')}}">
     <link rel="stylesheet" href="{{asset('resources/css/whatsapp.css')}}">
     
     
 </head>
 <body>
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="circular-loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                </svg>
+            </div>
+        </div>
+    </div>
     
     @include('layouts.partials.header')
 
@@ -36,6 +48,8 @@
     <script src="{{ asset('resources/js/cliente-blog.js') }}"></script>
     <script src="{{ asset('resources/js/cliente-testimonios.js') }}"></script>
     <script src="{{ asset('resources/js/cliente-reserva.js') }}"></script>
+    <script src="{{ asset('resources/js/cliente-cargando.js') }}"></script>
+    <script src="{{ asset('resources/js/cliente-buscar.js') }}"></script>
     <script src="{{ asset('resources/js/whatsapp.js') }}"></script>
 </body>
 </html>

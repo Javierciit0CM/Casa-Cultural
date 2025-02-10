@@ -1,231 +1,142 @@
-/* Estilos existentes... */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
-/* Mejoras en el diseño de la sección de habitaciones */
-.lh-rooms-section {
-    padding: 4rem;
-    background-color: #f9f9f9;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .lh-rooms-section::before,
-  .lh-rooms-section::after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
-    opacity: 0.1;
-    z-index: 0;
-  }
-  
-  .lh-rooms-section::before {
-    top: -150px;
-    left: -150px;
-  }
-  
-  .lh-rooms-section::after {
-    bottom: -150px;
-    right: -150px;
-  }
-  
-  .lh-container {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .lh-section-title {
-    font-size: 2rem;
-    margin-bottom: 4rem;
-    position: relative;
-    padding-bottom: 1.5rem;
+.rc-room-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.rc-section-title {
     text-align: center;
-    color: var(--secondary-color);
-  }
-  
-  .lh-section-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 4px;
-    background: var(--gold-gradient);
-  }
-  
-  .lh-rooms-grid {
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.rc-room-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem;
-    margin-bottom: 4rem;
-  }
-  
-  .lh-room-card {
+}
+
+.rc-room-card {
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-  }
-  
-  .lh-room-card:hover {
-    transform: translateY(-15px);
+    transition: all 0.3s ease;
+}
+
+.rc-room-card:hover {
+    transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-  
-  .lh-room-image {
-    height: 300px;
+}
+
+.rc-room-image-container {
     position: relative;
     overflow: hidden;
-  }
-  
-  .lh-room-image img {
+}
+
+.rc-room-image {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
     transition: transform 0.5s ease;
-  }
-  
-  .lh-room-card:hover .lh-room-image img {
+}
+
+.rc-room-card:hover .rc-room-image {
     transform: scale(1.1);
-  }
-  
-  .lh-room-overlay {
+}
+
+.rc-room-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
     display: flex;
     align-items: flex-end;
-    padding: 1.5rem;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-  }
-  
-  .lh-room-card:hover .lh-room-overlay {
-    opacity: 1;
-  }
-  
-  .lh-room-price {
+    padding: 1rem;
+}
+
+.rc-room-price {
     color: #fff;
     font-size: 1.2rem;
-    font-weight: bold;
-    background-color: rgba(201, 168, 106, 0.8);
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 0.5rem 1rem;
-    border-radius: 25px;
-  }
-  
-  .lh-room-content {
-    padding: 2rem;
-  }
-  
-  .lh-room-content h3 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
-  }
-  
-  .lh-room-content p {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-  }
-  
-  .lh-room-button {
-    width: 50%;
-    margin-top: 20px;
-    padding: 5px;
-    font-size: 1.1rem;
-    background: var(--gold-gradient);
-    color: var(--secondary-color);
-    border: 1px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .lh-room-button:hover {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(201, 168, 106, 0.4);
-  }
-  
-  .lh-more-rooms {
-    text-align: center;
-    margin-top: 4rem;
-  }
-  
-  .lh-more-rooms-link {
-    display: inline-block;
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    background: var(--gold-gradient);
-    border-radius: 50px;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .lh-more-rooms-link::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
-    transform: scale(0);
-    transition: transform 0.6s ease-out;
-  }
-  
-  .lh-more-rooms-link:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(201, 168, 106, 0.3);
-  }
-  
-  .lh-more-rooms-link:hover::before {
-    transform: scale(1);
-  }
+    border-radius: 20px;
+}
 
-  
-  @media (max-width: 768px) {
-    .lh-section-title {
-      font-size: 2.5rem;
+.rc-room-details {
+    padding: 2rem;
+}
+
+.rc-room-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.rc-room-description {
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.rc-room-features {
+    display: flex;
+    justify-content: space-between;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.rc-room-features span {
+    display: flex;
+    align-items: center;
+}
+
+.rc-room-features i {
+    margin-right: 0.5rem;
+    color: #d4af37;
+    font-size: 1.1rem;
+}
+
+.rc-book-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.rc-book-btn:hover {
+    background-color: #b8960c;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .rc-room-container {
+        grid-template-columns: 1fr;
     }
-  
-    .lh-rooms-grid {
-      grid-template-columns: 1fr;
+    
+    .rc-section-title {
+        font-size: 2rem;
     }
-  
-    .lh-room-image {
-      height: 250px;
-    }
-  }
-  
-  /* Animación mejorada */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .lh-fade-in {
-    animation: fadeInUp 1.2s ease-out forwards;
-  }
-  
-  
+}
