@@ -47,6 +47,7 @@
                                 <td>{{ $habitacion->capacidad_maxima }}</td>
                                 <td>S/ {{ number_format($habitacion->precio, 2) }}</td>
                                 <td>{{ Str::limit($habitacion->descripcion, 50) }}</td>
+                                <td>{{ $habitacion->comodidades}}</td>
                                 <td>
                                     <span class="rm-badge rm-badge-{{ 
                                         $habitacion->estado == 'ocupado' ? 'danger' : 

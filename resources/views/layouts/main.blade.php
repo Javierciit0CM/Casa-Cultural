@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="{{asset('resources/css/cliente-cargando.css')}}">
     <link rel="stylesheet" href="{{asset('resources/css/cliente-buscar.css')}}">
     <link rel="stylesheet" href="{{asset('resources/css/whatsapp.css')}}">
-    
-    
 </head>
 <body>
 

@@ -2,15 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-use App\Http\Controllers\HabitacionController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\RestauranteController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\BuscarHabitacionesController;
-
+use App\Http\Controllers\VistaClienteController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HabitacionController;
 
 
 
@@ -19,6 +18,9 @@ route::get('/', [HomeController::class, 'index'])->name('/');
 route::get('/reservar', [BuscarHabitacionesController::class, 'index'])->name('reservar');
 route::get('/buscar-habitaciones', [BuscarHabitacionesController::class, 'buscar'])->name('buscar-habitaciones');
 Route::get('/habitaciones/filtrar', [BuscarHabitacionesController::class, 'filtrarPorPrecio'])->name('habitaciones.filtrar');
+
+Route::get('/habitaciones/{id}', [VistaClienteController::class, 'show'])->name('habitaciones.show');
+
 
 
 

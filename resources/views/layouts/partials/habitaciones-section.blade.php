@@ -1,59 +1,55 @@
-<section class="rc-room-section">
-    <h2 class="rc-section-title">Experimente el Lujo en Nuestras Habitaciones</h2>
-    <div class="rc-room-container">
-        <div class="rc-room-card">
-            <div class="rc-room-image-container">
-                <img src="{{asset('resources/img/room-s.avif')}}" alt="Habitación Deluxe" class="rc-room-image">
-                <div class="rc-room-overlay">
-                    <span class="rc-room-price">Desde $200/noche</span>
+<section class="room-section">
+    <div class="room-grid">
+        @foreach($habitaciones as $habitacion)
+        <div class="room-card" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+            <div class="room-image" data-bs-toggle="modal" data-bs-target="#modal-{{ $habitacion->id }}">
+                @if($habitacion->imagenes->isNotEmpty())
+                    <img src="{{ asset('storage/' . $habitacion->imagenes->first()->img) }}" alt="{{ $habitacion->tipo_habitacion }}">
+                @else
+                    <img src="{{ asset('resources/img/default-room.jpg') }}" alt="Imagen no disponible">
+                @endif
+                <div class="room-overlay">
+                    <span class="room-price">Desde ${{ $habitacion->precio }}/noche</span>
                 </div>
             </div>
-            <div class="rc-room-details">
-                <h3 class="rc-room-name">Suite Deluxe</h3>
-                <p class="rc-room-description">Sumérjase en el lujo con nuestra espaciosa Suite Deluxe, ofreciendo vistas panorámicas impresionantes y acabados de primera calidad para una estancia inolvidable.</p>
-                <div class="rc-room-features">
-                    <span><i class="fas fa-expand-arrows-alt"></i> 35 m²</span>
-                    <span><i class="fas fa-users"></i> 2 adultos</span>
-                    <span><i class="fas fa-bed"></i> 1 cama king</span>
-                </div>
-                <button class="rc-book-btn">Reservar Ahora</button>
+            <div class="room-info">
+                <h2 class="room-name">{{ $habitacion->tipo_habitacion }}</h2>
+                <ul class="room-features">
+                    <li><i class="fas fa-user-friends"></i> {{ $habitacion->capacidad_maxima }} personas</li>
+                    @foreach(explode(',', $habitacion->descripcion) as $desc)
+                        <li>
+                            @switch(true)
+                                @case(str_contains(strtolower($desc), 'baño'))
+                                    <i class="fas fa-bath"></i>
+                                    @break
+                                @case(str_contains(strtolower($desc), 'vista'))
+                                    <i class="fas fa-eye"></i>
+                                    @break
+                                @case(str_contains(strtolower($desc), 'wifi'))
+                                    <i class="fas fa-wifi"></i>
+                                    @break
+                                @case(str_contains(strtolower($desc), 'cocina'))
+                                    <i class="fas fa-utensils"></i>
+                                    @break
+                                @case(str_contains(strtolower($desc), 'cafetera'))
+                                    <i class="fas fa-coffee"></i>
+                                    @break
+                                @case(str_contains(strtolower($desc), 'escritorio'))
+                                    <i class="fas fa-briefcase"></i>
+                                    @break
+                                @case(str_contains(strtolower($desc), 'servicio'))
+                                    <i class="fas fa-concierge-bell"></i>
+                                    @break
+                                @default
+                                    <i class="fas fa-check"></i>
+                            @endswitch
+                            {{ ucfirst(trim($desc)) }}
+                        </li>
+                    @endforeach
+                </ul>
+                <a href="{{ route('habitaciones.show', $habitacion->id) }}" class="book-btn">Reservar Ahora</a>
             </div>
-        </div>
-        <div class="rc-room-card">
-            <div class="rc-room-image-container">
-                <img src="{{asset('resources/img/room-m.avif')}}" alt="Suite Familiar" class="rc-room-image">
-                <div class="rc-room-overlay">
-                    <span class="rc-room-price">Desde $350/noche</span>
-                </div>
-            </div>
-            <div class="rc-room-details">
-                <h3 class="rc-room-name">Suite Familiar de Lujo</h3>
-                <p class="rc-room-description">Disfrute de momentos inolvidables en familia en nuestra amplia Suite Familiar, diseñada con un área de estar separada y comodidades premium para satisfacer todas sus necesidades.</p>
-                <div class="rc-room-features">
-                    <span><i class="fas fa-expand-arrows-alt"></i> 50 m²</span>
-                    <span><i class="fas fa-users"></i> 4 personas</span>
-                    <span><i class="fas fa-bed"></i> 1 cama king + 2 individuales</span>
-                </div>
-                <button class="rc-book-btn">Reservar Ahora</button>
-            </div>
-        </div>
-        <div class="rc-room-card">
-            <div class="rc-room-image-container">
-                <img src="{{asset('resources/img/room-d.jpg')}}" alt="Habitación Estándar" class="rc-room-image">
-                <div class="rc-room-overlay">
-                    <span class="rc-room-price">Desde $150/noche</span>
-                </div>
-            </div>
-            <div class="rc-room-details">
-                <h3 class="rc-room-name">Habitación Ejecutiva</h3>
-                <p class="rc-room-description">Experimente la combinación perfecta de comodidad y estilo en nuestra Habitación Ejecutiva, ideal para viajeros de negocios o aquellos que buscan una estancia corta pero lujosa.</p>
-                <div class="rc-room-features">
-                    <span><i class="fas fa-expand-arrows-alt"></i> 25 m²</span>
-                    <span><i class="fas fa-users"></i> 2 adultos</span>
-                    <span><i class="fas fa-bed"></i> 1 cama queen</span>
-                </div>
-                <button class="rc-book-btn">Reservar Ahora</button>
-            </div>
-        </div>
+        </div>  
+        @endforeach
     </div>
 </section>
